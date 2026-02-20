@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bathroom Remodeling Chicago | Make a Dream Home | Free Consultation</title>
+    <meta name="description" content="Expert bathroom remodeling in Chicago's West & Northwest suburbs. Walk-in showers, tub-to-shower conversions completed in just 1 week. Book your free consultation today.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #1e3a5f;
+            --accent-blue: #2d5a8c;
+            --light-blue: #4a7db8;
+            --white: #ffffff;
+            --off-white: #fafafa;
+            --light-gray: #f5f5f7;
+            --medium-gray: #e5e5ea;
+            --text-primary: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --text-light: #86868b;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 100;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 45px;
+            width: auto;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .phone-link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: opacity 0.2s;
+        }
+
+        .phone-link:hover {
+            opacity: 0.7;
+        }
+
+        .btn {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 100px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--accent-blue);
+            transform: scale(1.02);
+        }
+
+        .btn-large {
+            padding: 16px 32px;
+            font-size: 17px;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: scale(1.02);
+        }
+
+        /* Hero Section with Video Background */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        .hero-video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .hero-video-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(30, 58, 95, 0.95) 0%, rgba(45, 90, 140, 0.85) 100%);
+        }
+
+        .hero-background-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 24px;
+            color: var(--white);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.03em;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            font-weight: 500;
+            line-height: 1.5;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            max-width: 700px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 32px;
+            max-width: 700px;
+            padding-top: 48px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-stat {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero-stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+
+        .hero-stat-label {
+            font-size: 14px;
+            opacity: 0.8;
+            font-weight: 500;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 100px 24px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 64px;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: var(--light-gray);
+            color: var(--primary-blue);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-description {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Portfolio Gallery - Bento Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.02);
+        }
+
+        .portfolio-item:nth-child(1) {
+            grid-column: span 7;
+            grid-row: span 2;
+        }
+
+        .portfolio-item:nth-child(2) {
+            grid-column: span 5;
+        }
+
+        .portfolio-item:nth-child(3) {
+            grid-column: span 5;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 300px;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 24px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+        }
+
+        .portfolio-overlay h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .portfolio-overlay p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border: 1px solid var(--medium-gray);
+            border-radius: 20px;
+            padding: 40px 32px;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--primary-blue);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
+        }
+
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin-bottom: 24px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        /* Process Steps */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            position: relative;
+        }
+
+        .process-step {
+            background: var(--light-gray);
+            border-radius: 20px;
+            padding: 40px 32px;
+            position: relative;
+        }
+
+        .step-number {
+            width: 56px;
+            height: 56px;
+            background: var(--primary-blue);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+        }
+
+        .process-step h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .process-step p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        /* Why Choose Us - Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-bottom: 48px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 32px 24px;
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            margin: 0 auto 24px;
+            color: white;
+        }
+
+        .feature-item h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .feature-item p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Service Areas */
+        .areas-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .area-pill {
+            background: var(--white);
+            border: 2px solid var(--medium-gray);
+            padding: 12px 24px;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 15px;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .area-pill:hover {
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+            transform: translateY(-2px);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+            color: var(--white);
+            border-radius: 32px;
+            padding: 80px 24px;
+            text-align: center;
+            margin: 0 24px;
+        }
+
+        .cta-section h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 700px;
+            margin: 48px auto 0;
+            background: var(--white);
+            padding: 48px;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid var(--medium-gray);
+            border-radius: 12px;
+            font-size: 15px;
+            font-family: inherit;
+            transition: all 0.2s ease;
+            background: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 4px rgba(30, 58, 95, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            border-radius: 12px;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: var(--accent-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(30, 58, 95, 0.3);
+        }
+
+        .form-note {
+            text-align: center;
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .success-message {
+            display: none;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .success-message h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-primary);
+            color: var(--white);
+            padding: 60px 24px 32px;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-logo {
+            height: 50px;
+            margin-bottom: 24px;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin: 32px 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.2s;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.7;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin: 32px 0;
+        }
+
+        .social-link {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--white);
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary-blue);
+            transform: translateY(-4px);
+        }
+
+        .copyright {
+            margin-top: 32px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-actions {
+                gap: 8px;
+            }
+
+            .phone-link {
+                font-size: 0;
+            }
+
+            .phone-link::before {
+                content: "📞";
+                font-size: 20px;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            .hero {
+                min-height: 90vh;
+            }
+
+            .hero-content {
+                padding: 60px 24px;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+
+            section {
+                padding: 60px 24px;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-item:nth-child(1),
+            .portfolio-item:nth-child(2),
+            .portfolio-item:nth-child(3) {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            .contact-form {
+                padding: 32px 24px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section {
+                margin: 0;
+                border-radius: 0;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Micro-animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="https://placehold.co/200x50/1e3a5f/ffffff?text=Make+A+Dream+Home" alt="Make a Dream Home" class="logo">
+            </div>
+            <div class="header-actions">
+                <a href="tel:+13125551234" class="phone-link">(312) 555-1234</a>
+                <a href="https://calendly.com/makeadreamhome/30min" target="_blank" class="btn">Book Free Visit</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-video-container">
+            <!-- Replace this with actual video -->
+            <!-- <video autoplay muted loop playsinline>
+                <source src="your-video.mp4" type="video/mp4">
+            </video> -->
+            <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1920&h=1080&fit=crop" alt="Luxury Bathroom Remodel" class="hero-background-image">
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">Chicago's Premier Bathroom Remodeling</div>
+            <h1>Your Dream Bathroom.<br>Completed in 1 Week.</h1>
+            <p class="hero-subtitle">Expert bathroom remodeling for West & Northwest Chicago suburbs. Luxury walk-in showers, tub-to-shower conversions, and custom designs that transform your space.</p>
+            <div class="hero-cta">
+                <a href="https://calendly.com/makeadreamhome/30min" target="_blank" class="btn btn-large">📅 Book My Free Visit</a>
+                <a href="tel:+13125551234" class="btn btn-large btn-secondary">Call (312) 555-1234</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-number">500+</div>
+                    <div class="hero-stat-label">Bathrooms Remodeled</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">25+</div>
+                    <div class="hero-stat-label">Years Experience</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">1 Week</div>
+                    <div class="hero-stat-label">Average Project Time</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">100%</div>
+                    <div class="hero-stat-label">Satisfaction Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section style="background: var(--light-gray);">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Our Work</div>
+                <h2 class="section-title">Transforming Bathrooms Across Chicago</h2>
+                <p class="section-description">See the luxury and craftsmanship we bring to every project. Real homes, real transformations.</p>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&h=600&fit=crop" alt="Modern Walk-In Shower with Freestanding Tub">
+                    <div class="portfolio-overlay">
+                        <h3>Luxury Spa Bathroom</h3>
+                        <p>Walk-in shower • Freestanding tub • XL porcelain tile</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?w=800&h=600&fit=crop" alt="Contemporary Bathroom with Walk-In Shower">
+                    <div class="portfolio-overlay">
+                        <h3>Modern Minimalist</h3>
+                        <p>Custom shower • Heated floors • Matte fixtures</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&h=600&fit=crop" alt="Elegant Bathroom with Custom Vanity">
+                    <div class="portfolio-overlay">
+                        <h3>Designer Master Bath</h3>
+                        <p>Custom vanity • LED mirror • Premium tile</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <a href="https://calendly.com/makeadreamhome/30min" target="_blank" class="btn btn-large">📅 Book My Free Visit</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Services</div>
+                <h2 class="section-title">Bathroom Remodeling Excellence</h2>
+                <p class="section-description">From walk-in showers to complete renovations, we deliver exceptional results</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🚿</div>
+                    <h3>Walk-In Showers</h3>
+                    <p>Modern, accessible walk-in showers with XL porcelain tiles and luxury fixtures. Perfect for aging-in-place or contemporary design. Quick 1-week installation.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🛁</div>
+                    <h3>Tub-to-Shower Conversions</h3>
+                    <p>Transform your old bathtub into a spacious, modern shower. Ideal for homeowners who prefer functionality without sacrificing style.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h3>Full Bathroom Remodels</h3>
+                    <p>Complete transformations including custom tile work, fixtures, cabinetry, and plumbing. Designed to match your vision and budget.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💎</div>
+                    <h3>Luxury Upgrades</h3>
+                    <p>Premium finishes, custom cabinets, heated floors, and high-end fixtures. Elevate your bathroom with expert craftsmanship.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Custom Tile Work</h3>
+                    <p>Expert installation of XL porcelain, ceramic, and natural stone tiles. Modern, seamless designs that make a statement.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Professional Plumbing</h3>
+                    <p>Complete plumbing installations and repairs. All work meets Chicago building codes with quality guarantees.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section style="background: var(--light-gray);">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Why Us</div>
+                <h2 class="section-title">Why Homeowners Choose Us</h2>
+                <p class="section-description">Experience, quality, and speed that sets us apart</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Quick 1-Week Install</h3>
+                    <p>Most projects completed in just 1 week. Minimal disruption with maximum results.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">🏆</div>
+                    <h3>25+ Years Experience</h3>
+                    <p>Decades of expertise serving Chicago's suburbs. We've perfected our craft.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Expert Craftsmanship</h3>
+                    <p>Meticulous attention to detail. We take pride in getting it right the first time.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">💎</div>
+                    <h3>Premium Materials</h3>
+                    <p>XL porcelain tiles, custom cabinets, and durable fixtures that last.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Process</div>
+                <h2 class="section-title">Simple 4-Step Process</h2>
+                <p class="section-description">From consultation to completion, we make it easy</p>
+            </div>
+            
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Free Consultation</h3>
+                    <p>We visit your home, discuss your vision, and provide expert recommendations tailored to your needs.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Custom Design</h3>
+                    <p>Receive a detailed proposal with design options, material selections, and transparent pricing.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Expert Installation</h3>
+                    <p>Our skilled team completes your remodel with minimal disruption—typically in just 1 week.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Final Walkthrough</h3>
+                    <p>We ensure every detail meets your expectations and provide care instructions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section style="background: var(--light-gray);">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Service Areas</div>
+                <h2 class="section-title">Serving Chicago's West & Northwest Suburbs</h2>
+                <p class="section-description">Proudly serving homeowners throughout the greater Chicago metropolitan area</p>
+            </div>
+            
+            <div class="areas-container">
+                <div class="area-pill">Oak Park</div>
+                <div class="area-pill">Arlington Heights</div>
+                <div class="area-pill">Schaumburg</div>
+                <div class="area-pill">Naperville</div>
+                <div class="area-pill">Elmhurst</div>
+                <div class="area-pill">Wheaton</div>
+                <div class="area-pill">Des Plaines</div>
+                <div class="area-pill">Palatine</div>
+                <div class="area-pill">Evanston</div>
+                <div class="area-pill">Skokie</div>
+                <div class="area-pill">& More Areas</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA & Contact Form -->
+    <section id="contact">
+        <div class="container">
+            <div class="cta-section">
+                <h2>Book Your Free Visit Today</h2>
+                <p>Choose a time that works for you. We'll visit your home, discuss your vision, and provide a detailed estimate—completely free.</p>
+                
+                <!-- Primary CTA: Calendar Booking -->
+                <div style="margin: 48px 0;">
+                    <a href="https://calendly.com/makeadreamhome/30min" target="_blank" class="btn btn-large" style="background: white; color: var(--primary-blue); font-size: 1.25rem; padding: 20px 48px; box-shadow: 0 10px 40px rgba(0,0,0,0.2);">
+                        📅 Book My Free Visit Now
+                    </a>
+                    <p style="margin-top: 16px; font-size: 14px; opacity: 0.9;">Click to see available times and schedule instantly</p>
+                </div>
+
+                <!-- Alternative Contact Methods -->
+                <div style="max-width: 700px; margin: 64px auto 0; padding-top: 48px; border-top: 1px solid rgba(255,255,255,0.2);">
+                    <p style="font-size: 1.1rem; margin-bottom: 32px; opacity: 0.95;">Prefer to talk first? We're here to help:</p>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-bottom: 48px;">
+                        <a href="tel:+13125551234" style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 24px; border-radius: 16px; text-decoration: none; color: white; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease; display: block;" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">
+                            <div style="font-size: 2rem; margin-bottom: 8px;">📞</div>
+                            <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 4px;">Call Us</div>
+                            <div style="opacity: 0.9;">(312) 555-1234</div>
+                        </a>
+                        
+                        <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 24px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.2);">
+                            <div style="font-size: 2rem; margin-bottom: 8px;">✉️</div>
+                            <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 4px;">Quick Contact</div>
+                            <button onclick="document.getElementById('quickContactForm').style.display='block'; this.parentElement.parentElement.style.display='none';" style="background: white; color: var(--primary-blue); border: none; padding: 8px 16px; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: 8px;">Send Message</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Contact Form (Hidden by default) -->
+                <div id="quickContactForm" class="contact-form" style="display: none; margin-top: 32px;">
+                    <h3 style="color: var(--primary-blue); margin-bottom: 24px; text-align: center;">Quick Contact Form</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" placeholder="Your full name" required>
+                        </div>
+
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" placeholder="(312) 555-1234" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email (optional)</label>
+                                <input type="email" id="email" name="email" placeholder="your@email.com">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Property Address *</label>
+                            <input type="text" id="address" name="address" placeholder="Street address, City, ZIP" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">What are you interested in? *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service...</option>
+                                <option value="walk-in-shower">Walk-In Shower</option>
+                                <option value="tub-to-shower">Tub-to-Shower Conversion</option>
+                                <option value="full-remodel">Full Bathroom Remodel</option>
+                                <option value="luxury-upgrade">Luxury Upgrade</option>
+                                <option value="not-sure">Not Sure / Want to Discuss</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Additional details (optional)</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your project..." style="min-height: 80px;"></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Send My Information</button>
+                        
+                        <p class="form-note">We'll contact you within 24 hours to schedule your free visit.</p>
+                    </form>
+
+                    <div id="successMessage" class="success-message">
+                        <h3>✓ Thank You!</h3>
+                        <p>We've received your message and will contact you within 24 hours to schedule your free consultation.</p>
+                        <div style="margin-top: 24px;">
+                            <a href="https://calendly.com/makeadreamhome/30min" target="_blank" class="btn" style="background: white; color: #10b981;">Or Book Your Visit Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <img src="https://placehold.co/200x50/ffffff/1e3a5f?text=Make+A+Dream+Home" alt="Make a Dream Home" class="footer-logo">
+            
+            <div class="footer-links">
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+                <a href="tel:+13125551234">Call Us</a>
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.facebook.com/MakeaDreamHomeChicago" target="_blank" class="social-link" aria-label="Facebook">f</a>
+                <a href="https://www.instagram.com/makeadreamhomechicago" target="_blank" class="social-link" aria-label="Instagram">📷</a>
+            </div>
+
+            <p style="margin-top: 24px;">Expert Bathroom Remodeling in Chicago's West & Northwest Suburbs</p>
+
+            <div class="copyright">
+                <p>&copy; 2026 Make a Dream Home. All rights reserved.</p>
+                <p>Licensed & Insured | Serving Chicago Metropolitan Area</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            console.log('Form submitted:', data);
+            
+            // Hide form and show success message
+            this.style.display = 'none';
+            document.getElementById('successMessage').classList.add('show');
+            
+            // TODO: Send to your backend/form service
+            // fetch('/api/submit-lead', { method: 'POST', body: JSON.stringify(data) })
+            
+            // Track conversion
+            // gtag('event', 'conversion', {'send_to': 'AW-XXXXX/XXXXX'});
+            // fbq('track', 'Lead');
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Phone Call Tracking
+        document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+            link.addEventListener('click', function() {
+                console.log('Phone number clicked');
+                // gtag('event', 'phone_call');
+                // fbq('track', 'Contact');
+            });
+        });
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .feature-item, .process-step').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
