@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#1e3a5f">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <title>Bathroom Remodeling Chicago | Make a Dream Home | Free Consultation</title>
     <meta name="description" content="Expert bathroom remodeling in Chicago's West & Northwest suburbs. Walk-in showers, tub-to-shower conversions completed in just 1 week. Book your free consultation today.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -353,15 +356,27 @@
         }
 
         .service-icon {
-            width: 64px;
-            height: 64px;
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #f5f5f7 0%, #e5e5ea 100%);
             border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
             margin-bottom: 24px;
+            overflow: hidden;
+        }
+
+        .service-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .service-icon-placeholder {
+            font-size: 48px;
+            color: var(--primary-blue);
+            opacity: 0.3;
         }
 
         .service-card h3 {
@@ -684,6 +699,14 @@
 
             .phone-link {
                 font-size: 0;
+                background: var(--light-gray);
+                padding: 10px 12px;
+                border-radius: 50%;
+                width: 44px;
+                height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
 
             .phone-link::before {
@@ -692,8 +715,16 @@
             }
 
             .btn {
-                padding: 10px 20px;
+                padding: 12px 20px;
                 font-size: 14px;
+                min-height: 44px; /* iOS touch target */
+            }
+
+            .btn-large {
+                padding: 16px 28px;
+                font-size: 16px;
+                width: 100%;
+                max-width: 100%;
             }
 
             .hero {
@@ -701,7 +732,20 @@
             }
 
             .hero-content {
-                padding: 60px 24px;
+                padding: 60px 20px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                width: 100%;
             }
 
             .hero-stats {
@@ -710,11 +754,20 @@
             }
 
             section {
-                padding: 60px 24px;
+                padding: 60px 20px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-description {
+                font-size: 1.1rem;
             }
 
             .portfolio-grid {
                 grid-template-columns: 1fr;
+                gap: 16px;
             }
 
             .portfolio-item:nth-child(1),
@@ -724,8 +777,32 @@
                 grid-row: span 1;
             }
 
+            .portfolio-item img {
+                min-height: 250px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .service-icon {
+                height: 180px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
             .contact-form {
-                padding: 32px 24px;
+                padding: 32px 20px;
+                margin: 32px 0 0;
             }
 
             .form-grid {
@@ -735,6 +812,59 @@
             .cta-section {
                 margin: 0;
                 border-radius: 0;
+                padding: 60px 20px;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+
+            .cta-section p {
+                font-size: 1.1rem;
+            }
+
+            /* Mobile-specific touch improvements */
+            a, button {
+                -webkit-tap-highlight-color: rgba(30, 58, 95, 0.1);
+            }
+
+            /* Ensure text is readable on mobile */
+            body {
+                -webkit-text-size-adjust: 100%;
+                text-size-adjust: 100%;
+            }
+
+            /* Improve mobile form inputs */
+            input, select, textarea {
+                font-size: 16px; /* Prevents zoom on iOS */
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-stat-number {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .service-card {
+                padding: 32px 24px;
+            }
+
+            .areas-container {
+                gap: 8px;
+            }
+
+            .area-pill {
+                padding: 10px 16px;
+                font-size: 14px;
             }
         }
 
@@ -862,37 +992,49 @@
             
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">🚿</div>
+                    <div class="service-icon">
+                        <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?w=600&h=400&fit=crop&q=80" alt="Walk-In Shower">
+                    </div>
                     <h3>Walk-In Showers</h3>
                     <p>Modern, accessible walk-in showers with XL porcelain tiles and luxury fixtures. Perfect for aging-in-place or contemporary design. Quick 1-week installation.</p>
                 </div>
 
                 <div class="service-card">
-                    <div class="service-icon">🛁</div>
+                    <div class="service-icon">
+                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&h=400&fit=crop&q=80" alt="Tub to Shower Conversion">
+                    </div>
                     <h3>Tub-to-Shower Conversions</h3>
                     <p>Transform your old bathtub into a spacious, modern shower. Ideal for homeowners who prefer functionality without sacrificing style.</p>
                 </div>
 
                 <div class="service-card">
-                    <div class="service-icon">✨</div>
+                    <div class="service-icon">
+                        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&h=400&fit=crop&q=80" alt="Full Bathroom Remodel">
+                    </div>
                     <h3>Full Bathroom Remodels</h3>
                     <p>Complete transformations including custom tile work, fixtures, cabinetry, and plumbing. Designed to match your vision and budget.</p>
                 </div>
 
                 <div class="service-card">
-                    <div class="service-icon">💎</div>
+                    <div class="service-icon">
+                        <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=600&h=400&fit=crop&q=80" alt="Luxury Upgrades">
+                    </div>
                     <h3>Luxury Upgrades</h3>
                     <p>Premium finishes, custom cabinets, heated floors, and high-end fixtures. Elevate your bathroom with expert craftsmanship.</p>
                 </div>
 
                 <div class="service-card">
-                    <div class="service-icon">🎨</div>
+                    <div class="service-icon">
+                        <img src="https://images.unsplash.com/photo-1604709177225-055f99402ea3?w=600&h=400&fit=crop&q=80" alt="Custom Tile Work">
+                    </div>
                     <h3>Custom Tile Work</h3>
                     <p>Expert installation of XL porcelain, ceramic, and natural stone tiles. Modern, seamless designs that make a statement.</p>
                 </div>
 
                 <div class="service-card">
-                    <div class="service-icon">🔧</div>
+                    <div class="service-icon">
+                        <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&h=400&fit=crop&q=80" alt="Professional Plumbing">
+                    </div>
                     <h3>Professional Plumbing</h3>
                     <p>Complete plumbing installations and repairs. All work meets Chicago building codes with quality guarantees.</p>
                 </div>
