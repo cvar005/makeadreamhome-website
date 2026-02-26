@@ -1047,13 +1047,140 @@
         img {
             loading: lazy;
         }
+
+        /* Service Gallery Modal */
+        .service-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            overflow-y: auto;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .service-modal.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .modal-content {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        .modal-close {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: var(--white);
+            border: none;
+            border-radius: 50%;
+            font-size: 28px;
+            cursor: pointer;
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+
+        .modal-close:hover {
+            transform: rotate(90deg);
+            background: var(--gold);
+            color: var(--white);
+        }
+
+        .modal-header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--white);
+        }
+
+        .modal-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 900;
+            margin-bottom: 16px;
+        }
+
+        .modal-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto 24px;
+        }
+
+        .modal-price {
+            font-size: 1.5rem;
+            color: var(--gold);
+            font-weight: 800;
+            margin-bottom: 32px;
+        }
+
+        .modal-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .modal-gallery-item {
+            position: relative;
+            aspect-ratio: 4/3;
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .modal-gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .modal-gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-cta {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+        }
+
+        .modal-cta h3 {
+            color: var(--white);
+            font-size: 2rem;
+            margin-bottom: 24px;
+        }
+
+        .service-card {
+            cursor: pointer;
+        }
+
+        .service-card:hover .service-content h3 {
+            color: var(--gold);
+        }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="header-container">
-            <div class="logo-text">Make a Dream Home</div>
+            <img src="https://i.imgur.com/mB5nJan.png" alt="Make a Dream Home" class="logo">
             <div class="header-actions">
                 <a href="tel:+13125551234" class="phone-link">
                     <svg viewBox="0 0 24 24" width="20" height="20">
@@ -1061,7 +1188,7 @@
                     </svg>
                     (312) 555-1234
                 </a>
-                <a href="https://calendly.com/makeadreamhome/book-now" target="_blank" class="btn">Book Visit</a>
+                <a href="https://calendly.com/makeadreamhome/30min" target="_blank" class="btn">Book Visit</a>
             </div>
         </div>
     </header>
@@ -1118,7 +1245,7 @@
                         <h4>Text Us</h4>
                         <p>Quick response</p>
                     </a>
-                    <a href="https://calendly.com/makeadreamhome/book-now" target="_blank" class="cta-secondary">
+                    <a href="https://calendly.com/makeadreamhome/30min" target="_blank" class="cta-secondary">
                         <div class="cta-secondary-icon">
                             <svg viewBox="0 0 24 24" width="32" height="32" fill="white">
                                 <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
@@ -1242,7 +1369,7 @@
             </div>
 
             <div style="text-align: center;">
-                <a href="https://calendly.com/makeadreamhome/book-now" target="_blank" class="btn btn-large">Start Your Project Today</a>
+                <a href="https://calendly.com/makeadreamhome/30min" target="_blank" class="btn btn-large">Start Your Project Today</a>
             </div>
         </div>
     </section>
@@ -1257,9 +1384,9 @@
             </div>
 
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card" data-service="walk-in-showers">
                     <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?w=600&h=400&fit=crop&q=80" alt="Walk-In Showers">
+                        <img src="https://i.imgur.com/KQzfsI1.jpeg" alt="Walk-In Showers">
                     </div>
                     <div class="service-content">
                         <h3>Walk-In Showers</h3>
@@ -1267,9 +1394,9 @@
                     </div>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" data-service="tub-conversion">
                     <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&h=400&fit=crop&q=80" alt="Tub Conversions">
+                        <img src="https://i.imgur.com/f0FRlRS.jpeg" alt="Tub Conversions">
                     </div>
                     <div class="service-content">
                         <h3>Tub-to-Shower Conversions</h3>
@@ -1277,9 +1404,9 @@
                     </div>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" data-service="full-remodel">
                     <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&h=400&fit=crop&q=80" alt="Full Remodels">
+                        <img src="https://i.imgur.com/8TIDtJR.jpeg" alt="Full Remodels">
                     </div>
                     <div class="service-content">
                         <h3>Full Bathroom Remodels</h3>
@@ -1287,9 +1414,9 @@
                     </div>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" data-service="luxury-upgrades">
                     <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=600&h=400&fit=crop&q=80" alt="Luxury Upgrades">
+                        <img src="https://i.imgur.com/S18i2vO.jpeg" alt="Luxury Upgrades">
                     </div>
                     <div class="service-content">
                         <h3>Luxury Upgrades</h3>
@@ -1297,9 +1424,9 @@
                     </div>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" data-service="custom-tile">
                     <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1604709177225-055f99402ea3?w=600&h=400&fit=crop&q=80" alt="Custom Tile">
+                        <img src="https://i.imgur.com/UcL7hyr.jpeg" alt="Custom Tile">
                     </div>
                     <div class="service-content">
                         <h3>Custom Tile Work</h3>
@@ -1307,9 +1434,9 @@
                     </div>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" data-service="plumbing">
                     <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&h=400&fit=crop&q=80" alt="Plumbing">
+                        <img src="https://i.imgur.com/cihzZKZ.jpeg" alt="Plumbing">
                     </div>
                     <div class="service-content">
                         <h3>Professional Plumbing</h3>
@@ -1499,7 +1626,7 @@
                         <a href="tel:+13125551234" class="btn btn-large btn-white">
                             Call Now: (312) 555-1234
                         </a>
-                        <a href="https://calendly.com/makeadreamhome/book-now" target="_blank" class="btn btn-large btn-secondary">
+                        <a href="https://calendly.com/makeadreamhome/30min" target="_blank" class="btn btn-large btn-secondary">
                             Book Free Visit
                         </a>
                     </div>
@@ -1508,10 +1635,126 @@
         </div>
     </section>
 
+    <!-- Service Gallery Modals -->
+    <div id="walk-in-showers-modal" class="service-modal">
+        <button class="modal-close" onclick="closeModal('walk-in-showers-modal')">×</button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Walk-In Showers</h2>
+                <p>Modern, accessible walk-in showers designed for comfort, safety, and style. Perfect for aging-in-place or contemporary bathroom aesthetics.</p>
+                <div class="modal-price">Starting at $12,000</div>
+            </div>
+            <div class="modal-gallery">
+                <div class="modal-gallery-item"><img src="https://i.imgur.com/KQzfsI1.jpeg" alt="Walk-in Shower 1"></div>
+                <div class="modal-gallery-item"><img src="https://i.imgur.com/7CL2uIG.jpeg" alt="Walk-in Shower 2"></div>
+                <div class="modal-gallery-item"><img src="https://i.imgur.com/OIJyJ0c.jpeg" alt="Walk-in Shower 3"></div>
+                <div class="modal-gallery-item"><img src="https://i.imgur.com/vZdPzvv.jpeg" alt="Walk-in Shower 4"></div>
+            </div>
+            <div class="modal-cta">
+                <h3>Ready for Your Walk-In Shower?</h3>
+                <a href="https://calendly.com/makeadreamhome/30min" target="_blank" class="btn btn-large btn-white">Book Free Visit</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="tub-conversion-modal" class="service-modal">
+        <button class="modal-close" onclick="closeModal('tub-conversion-modal')">×</button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Tub-to-Shower Conversions</h2>
+                <p>Transform your old bathtub into a spacious, modern walk-in shower. Quick installation in 5-6 days.</p>
+                <div class="modal-price">Starting at $8,000</div>
+            </div>
+            <div class="modal-gallery">
+                <div class="modal-gallery-item"><img src="https://i.imgur.com/f0FRlRS.jpeg" alt="Tub Conversion 1"></div>
+                <div class="modal-gallery-item"><img src="https://i.imgur.com/mVmJiWU.jpeg" alt="Tub Conversion 2"></div>
+                <div class="modal-gallery-item"><img src="https://i.imgur.com/80vbdtN.jpeg" alt="Tub Conversion 3"></div>
+            </div>
+            <div class="modal-cta">
+                <h3>Ready to Convert Your Tub?</h3>
+                <a href="https://calendly.com/makeadreamhome/30min" target="_blank" class="btn btn-large btn-white">Book Free Visit</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="full-remodel-modal" class="service-modal">
+        <button class="modal-close" onclick="closeModal('full-remodel-modal')">×</button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Full Bathroom Remodels</h2>
+                <p>Complete bathroom transformations including custom tile work, fixtures, cabinetry, and plumbing. Designed to match your vision.</p>
+                <div class="modal-price">Starting at $15,000</div>
+            </div>
+            <div class="modal-gallery">
+                <div class="modal-gallery-item"><img src="https://i.imgur.com/8TIDtJR.jpeg" alt="Full Remodel 1"></div>
+                <div class="modal-gallery-item"><img src="https://i.imgur.com/vXBv0j6.jpeg" alt="Full Remodel 2"></div>
+                <div class="modal-gallery-item"><img src="https://i.imgur.com/pXQf7i7.jpeg" alt="Full Remodel 3"></div>
+            </div>
+            <div class="modal-cta">
+                <h3>Ready for Your Dream Bathroom?</h3>
+                <a href="https://calendly.com/makeadreamhome/30min" target="_blank" class="btn btn-large btn-white">Book Free Visit</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="luxury-upgrades-modal" class="service-modal">
+        <button class="modal-close" onclick="closeModal('luxury-upgrades-modal')">×</button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Luxury Bathroom Upgrades</h2>
+                <p>Premium finishes, custom cabinets, heated floors, freestanding tubs, and high-end fixtures that elevate your bathroom to spa-like luxury.</p>
+                <div class="modal-price">Starting at $20,000</div>
+            </div>
+            <div class="modal-gallery">
+                <div class="modal-gallery-item"><img src="https://i.imgur.com/S18i2vO.jpeg" alt="Luxury Upgrade 1"></div>
+            </div>
+            <div class="modal-cta">
+                <h3>Ready for Luxury?</h3>
+                <a href="https://calendly.com/makeadreamhome/30min" target="_blank" class="btn btn-large btn-white">Book Free Visit</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="custom-tile-modal" class="service-modal">
+        <button class="modal-close" onclick="closeModal('custom-tile-modal')">×</button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Custom Tile Work</h2>
+                <p>Expert installation of XL porcelain, ceramic, and natural stone tiles. Modern, seamless designs that make a bold statement.</p>
+                <div class="modal-price">Starting at $5,000</div>
+            </div>
+            <div class="modal-gallery">
+                <div class="modal-gallery-item"><img src="https://i.imgur.com/UcL7hyr.jpeg" alt="Custom Tile 1"></div>
+            </div>
+            <div class="modal-cta">
+                <h3>Ready for Custom Tile?</h3>
+                <a href="https://calendly.com/makeadreamhome/30min" target="_blank" class="btn btn-large btn-white">Book Free Visit</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="plumbing-modal" class="service-modal">
+        <button class="modal-close" onclick="closeModal('plumbing-modal')">×</button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Professional Plumbing</h2>
+                <p>Complete plumbing installations and repairs for your bathroom remodel. All work meets Chicago building codes with quality guarantees.</p>
+                <div class="modal-price">Starting at $500</div>
+            </div>
+            <div class="modal-gallery">
+                <div class="modal-gallery-item"><img src="https://i.imgur.com/cihzZKZ.jpeg" alt="Plumbing Work 1"></div>
+            </div>
+            <div class="modal-cta">
+                <h3>Need Plumbing Services?</h3>
+                <a href="https://calendly.com/makeadreamhome/30min" target="_blank" class="btn btn-large btn-white">Book Free Visit</a>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer>
         <div class="footer-container">
-            <div class="footer-logo-text">Make a Dream Home</div>
+            <img src="https://i.imgur.com/mB5nJan.png" alt="Make a Dream Home" class="footer-logo">
             
             <div class="footer-content">
                 <p><strong>Make a Dream Home</strong></p>
@@ -1522,7 +1765,7 @@
             <div class="footer-links">
                 <a href="tel:+13125551234">Call Us</a>
                 <a href="sms:+13125551234">Text Us</a>
-                <a href="https://calendly.com/makeadreamhome/book-now" target="_blank">Book Visit</a>
+                <a href="https://calendly.com/makeadreamhome/30min" target="_blank">Book Visit</a>
             </div>
 
             <div class="social-links">
@@ -1615,6 +1858,55 @@
             slider.addEventListener('click', (e) => {
                 updateSlider(e.clientX);
             });
+        });
+
+        // Service Gallery Modals
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                document.body.style.overflow = 'hidden';
+                modal.classList.add('active');
+                // Trigger reflow for animation
+                setTimeout(() => modal.style.opacity = '1', 10);
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.opacity = '0';
+                setTimeout(() => {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }, 300);
+            }
+        }
+
+        // Service card click handlers
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const service = this.getAttribute('data-service');
+                const modalId = service + '-modal';
+                openModal(modalId);
+            });
+        });
+
+        // Close modal when clicking outside
+        document.querySelectorAll('.service-modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeModal(this.id);
+                }
+            });
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.service-modal.active').forEach(modal => {
+                    closeModal(modal.id);
+                });
+            }
         });
     </script>
 </body>
