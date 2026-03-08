@@ -39,65 +39,6 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Sticky Header */
-        header {
-            position: sticky;
-            top: 0;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            z-index: 1000;
-            border-bottom: 1px solid var(--medium-gray);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        .header-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 16px 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            height: 45px;
-            width: auto;
-        }
-
-        .logo-text {
-            font-size: 20px;
-            font-weight: 800;
-            color: var(--primary-blue);
-            letter-spacing: -0.5px;
-        }
-
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .phone-link {
-            color: var(--primary-blue);
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 16px;
-            padding: 12px 20px;
-            border-radius: 8px;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .phone-link svg {
-            fill: var(--primary-blue);
-        }
-
-        .phone-link:hover {
-            background: var(--light-gray);
-        }
 
         .btn {
             background: var(--primary-blue);
@@ -151,10 +92,68 @@
             box-shadow: 0 8px 30px rgba(0,0,0,0.2);
         }
 
+        /* Floating Hero Nav */
+        .hero-nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 32px;
+        }
+
+        .hero-nav-logo {
+            height: 48px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+
+        .hero-nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .hero-nav-phone {
+            color: rgba(255,255,255,0.92);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            padding: 9px 16px;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+
+        .hero-nav-phone:hover {
+            background: rgba(255,255,255,0.12);
+        }
+
+        .hero-nav-btn {
+            background: var(--white);
+            color: var(--primary-blue);
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .hero-nav-btn:hover {
+            background: var(--gold);
+            color: var(--white);
+        }
+
         /* Hero Section */
         .hero {
             position: relative;
-            min-height: 90vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             overflow: hidden;
@@ -177,17 +176,14 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(30, 58, 95, 0.92) 0%, rgba(45, 90, 140, 0.88) 100%);
+            background: linear-gradient(135deg, rgba(20, 35, 60, 0.62) 0%, rgba(30, 58, 95, 0.52) 100%);
         }
 
-        /* Video placeholder - uncomment when ready */
-        /* 
         .hero-video {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        */
 
         .hero-image {
             width: 100%;
@@ -200,8 +196,41 @@
             z-index: 2;
             max-width: 1400px;
             margin: 0 auto;
-            padding: 80px 24px;
+            padding: 100px 32px 40px;
             color: var(--white);
+        }
+
+        /* Social Proof Kicker */
+        .hero-kicker {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px 16px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.92);
+        }
+
+        .hero-kicker-google {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50px;
+            padding: 5px 12px 5px 8px;
+        }
+
+        .hero-kicker-stars {
+            color: #fbbc04;
+            letter-spacing: 1px;
+            font-size: 13px;
+        }
+
+        .hero-kicker-divider {
+            color: rgba(255,255,255,0.35);
+            font-size: 16px;
         }
 
         .hero-badge {
@@ -218,7 +247,7 @@
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 5.5rem);
+            font-size: clamp(2.2rem, 4.5vw, 4.2rem);
             font-weight: 900;
             line-height: 1.1;
             margin-bottom: 20px;
@@ -230,10 +259,10 @@
         }
 
         .hero-subtitle {
-            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+            font-size: clamp(1rem, 2vw, 1.3rem);
             font-weight: 500;
             line-height: 1.5;
-            margin-bottom: 40px;
+            margin-bottom: 28px;
             opacity: 0.95;
             max-width: 700px;
         }
@@ -241,24 +270,27 @@
         /* Multi-Path CTAs */
         .hero-ctas {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             gap: 16px;
-            max-width: 600px;
-            margin-bottom: 60px;
+            max-width: 780px;
+            margin-bottom: 24px;
         }
 
         .cta-primary {
             background: var(--white);
             color: var(--primary-blue);
-            padding: 24px 32px;
+            padding: 20px 24px;
             border-radius: 12px;
             text-decoration: none;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
+            gap: 14px;
             transition: all 0.3s;
             border: 3px solid transparent;
+            border-left: 5px solid var(--gold);
             box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            flex: 1;
         }
 
         .cta-primary:hover {
@@ -270,7 +302,7 @@
         .cta-primary-left {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 14px;
         }
 
         .cta-icon {
@@ -309,19 +341,21 @@
         }
 
         .cta-secondary {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.10);
             backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.2);
             color: var(--white);
-            padding: 20px;
+            padding: 20px 24px;
             border-radius: 12px;
             text-decoration: none;
             text-align: center;
             transition: all 0.3s;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
-            gap: 8px;
+            justify-content: center;
+            gap: 12px;
+            flex: 1;
         }
 
         .cta-secondary:hover {
@@ -344,32 +378,59 @@
             opacity: 0.9;
         }
 
-        /* Trust Bar */
-        .hero-trust {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 32px;
-            padding-top: 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            max-width: 800px;
+        /* Google Badge */
+        .hero-google-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #fff;
+            border-radius: 12px;
+            padding: 10px 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.22);
+            text-decoration: none;
+            margin-top: 8px;
         }
 
-        .trust-item {
-            text-align: center;
+        .hero-google-badge:hover {
+            box-shadow: 0 6px 28px rgba(0,0,0,0.28);
+            transform: translateY(-2px);
+            transition: all 0.2s;
         }
 
-        .trust-number {
-            font-size: 2.5rem;
-            font-weight: 900;
-            display: block;
-            margin-bottom: 4px;
-            color: var(--gold);
+        /* CTA or divider */
+        .cta-or {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.45);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            flex-shrink: 0;
+            width: 32px;
         }
 
-        .trust-label {
+        /* Trust checkpoints */
+        .hero-checks {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 20px;
+            margin-top: 16px;
+        }
+
+        .hero-check {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.85);
+        }
+
+        .hero-check-icon {
+            color: #4ade80;
             font-size: 14px;
-            opacity: 0.9;
-            font-weight: 500;
+            font-weight: 800;
         }
 
         /* Section Styling */
@@ -628,12 +689,58 @@
             font-size: 15px;
         }
 
+
         /* Reviews Section */
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
+        .reviews-carousel-wrapper {
+            position: relative;
+        }
+
+        .carousel-btn {
+            display: none;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            background: var(--white);
+            border: 2px solid var(--medium-gray);
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+            transition: all 0.2s;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-blue);
+        }
+
+        .carousel-btn:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+            border-color: var(--primary-blue);
+        }
+
+        .carousel-btn-prev { left: -24px; }
+        .carousel-btn-next { right: -24px; }
+
+        @media (min-width: 769px) {
+            .carousel-btn { display: flex; }
+            .swipe-hint { display: none; }
+        }
+
+        .reviews-carousel {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 16px;
             margin-bottom: 48px;
+            scrollbar-width: none;
+        }
+        .reviews-carousel::-webkit-scrollbar {
+            display: none;
         }
 
         .review-card {
@@ -642,6 +749,15 @@
             border-radius: 16px;
             padding: 32px;
             transition: all 0.3s;
+            flex: 0 0 calc(33.333% - 14px);
+            scroll-snap-align: start;
+            min-width: 300px;
+        }
+
+        @media (max-width: 768px) {
+            .review-card {
+                flex: 0 0 85vw;
+            }
         }
 
         .review-card:hover {
@@ -986,19 +1102,118 @@
 
             .hero {
                 min-height: 100vh;
+                align-items: flex-start;
+                padding-top: 0 !important;
+            }
+
+            .hero-nav {
+                padding: 16px 20px;
+            }
+
+            .hero-nav-logo {
+                height: 40px;
+            }
+
+            .hero-nav-phone {
+                display: none;
+            }
+
+            .hero-nav-btn {
+                padding: 9px 18px;
+                font-size: 14px;
             }
 
             .hero-content {
-                padding: 60px 20px;
+                padding: 80px 20px 28px;
+            }
+
+            .hero-kicker {
+                font-size: 13px;
+                gap: 8px 12px;
+                margin-bottom: 16px;
+            }
+
+            .hero-kicker-google {
+                padding: 5px 12px 5px 8px;
+            }
+
+            .hero h1 {
+                font-size: 1.95rem;
+                margin-bottom: 12px;
+                letter-spacing: -0.02em;
+                line-height: 1.15;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+                margin-bottom: 20px;
+                line-height: 1.5;
+                opacity: 0.88;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+                gap: 10px;
+                margin-bottom: 14px;
+            }
+
+            .cta-primary {
+                padding: 15px 16px;
+            }
+
+            .cta-icon {
+                width: 42px;
+                height: 42px;
+                font-size: 20px;
+                border-radius: 8px;
+            }
+
+            .cta-text h3 {
+                font-size: 15px;
+                margin-bottom: 2px;
+            }
+
+            .cta-subtext {
+                display: block;
+                font-size: 12px;
+                opacity: 0.65;
+            }
+
+            .cta-secondary {
+                padding: 15px 20px !important;
+                gap: 10px !important;
+            }
+
+            .cta-secondary h4 {
+                font-size: 15px !important;
+            }
+
+            .cta-secondary-icon {
+                font-size: 22px !important;
             }
 
             .cta-secondary-row {
                 grid-template-columns: 1fr;
             }
 
-            .hero-trust {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 24px;
+            .hero-checks {
+                gap: 6px 14px;
+                margin-top: 12px;
+            }
+
+            .hero-check {
+                font-size: 12px;
+            }
+
+            .cta-or {
+                width: auto;
+                text-align: center;
+            }
+
+            .hero-badge {
+                padding: 6px 14px;
+                font-size: 12px;
+                margin-bottom: 12px;
             }
 
             section {
@@ -1006,7 +1221,6 @@
             }
 
             .services-grid,
-            .reviews-grid,
             .before-after-grid {
                 grid-template-columns: 1fr;
             }
@@ -1177,104 +1391,177 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="header-container">
-            <img src="https://i.imgur.com/mB5nJan.png" alt="Make a Dream Home" class="logo">
-            <div class="header-actions">
-                <a href="tel:+13125551234" class="phone-link">
-                    <svg viewBox="0 0 24 24" width="20" height="20">
-                        <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
-                    </svg>
-                    (312) 555-1234
-                </a>
-                <a href="https://calendly.com/makeadreamhome/30min" target="_blank" class="btn">Book Visit</a>
-            </div>
-        </div>
-    </header>
-
     <!-- Hero Section -->
     <section class="hero">
+        <!-- Floating Nav -->
+        <nav class="hero-nav">
+            <img src="https://i.imgur.com/mB5nJan.png" alt="Make a Dream Home" class="hero-nav-logo">
+        </nav>
+
         <div class="hero-media">
-            <!-- Uncomment when video is ready:
             <video class="hero-video" autoplay muted loop playsinline>
-                <source src="hero-video.mp4" type="video/mp4">
+                <source src="Hero video 1.mp4" type="video/mp4">
             </video>
-            -->
-            <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1920&h=1080&fit=crop&q=80" 
-                 alt="Luxury Bathroom Remodel" class="hero-image">
         </div>
         
         <div class="hero-content">
+            <!-- Social Proof Kicker -->
+            <div class="hero-kicker">
+                <div class="hero-kicker-google">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" style="flex-shrink:0">
+                        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                        <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                    </svg>
+                    <span class="hero-kicker-stars">★★★★★</span>
+                    <span>5.0 Google Rating</span>
+                </div>
+            </div>
+
             <h1>
-                Transform Your Bathroom.<br>
-                <span class="highlight">Best Value</span> Guaranteed.
+                Get the Bathroom You've Always Wanted<br>
+                <span class="highlight">Done Right.</span>
             </h1>
-            
+
             <p class="hero-subtitle">
-                Premium quality bathroom remodeling at fair prices. 
-                25+ years of expertise serving Chicago's West & Northwest suburbs.
+                Premium bathroom remodeling at best prices. Exceptional Results, Every Time.
             </p>
 
             <!-- Multi-Path CTAs -->
             <div class="hero-ctas">
                 <!-- PRIMARY: Call Now -->
                 <a href="tel:+13125551234" class="cta-primary">
-                    <div class="cta-primary-left">
-                        <div class="cta-icon">
-                            <svg viewBox="0 0 24 24" width="28" height="28" fill="white">
-                                <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
-                            </svg>
-                        </div>
-                        <div class="cta-text">
-                            <h3>Call Now: (312) 555-1234</h3>
-                            <p>Speak with an expert • Available now</p>
-                        </div>
+                    <div class="cta-icon">
+                        <svg viewBox="0 0 24 24" width="26" height="26" fill="white">
+                            <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                        </svg>
                     </div>
-                    <div class="cta-arrow">→</div>
+                    <div class="cta-text">
+                        <h3 style="white-space:nowrap;">Call Now: (312) 555-1234</h3>
+                    </div>
                 </a>
 
-                <!-- SECONDARY: Text & Book -->
-                <div class="cta-secondary-row">
-                    <a href="sms:+13125551234" class="cta-secondary">
-                        <div class="cta-secondary-icon">
-                            <svg viewBox="0 0 24 24" width="32" height="32" fill="white">
-                                <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM9 11H7V9h2v2zm4 0h-2V9h2v2zm4 0h-2V9h2v2z"/>
-                            </svg>
-                        </div>
-                        <h4>Text Us</h4>
-                        <p>Quick response</p>
-                    </a>
-                    <a href="https://calendly.com/makeadreamhome/30min" target="_blank" class="cta-secondary">
-                        <div class="cta-secondary-icon">
-                            <svg viewBox="0 0 24 24" width="32" height="32" fill="white">
-                                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
-                            </svg>
-                        </div>
-                        <h4>Book Online</h4>
-                        <p>See times now</p>
-                    </a>
-                </div>
+                <!-- OR divider -->
+                <div class="cta-or">or</div>
+
+                <!-- SECONDARY: Book -->
+                <a href="https://calendly.com/makeadreamhome/book-now" target="_blank" class="cta-secondary">
+                    <div class="cta-secondary-icon" style="font-size: 24px;">
+                        <svg viewBox="0 0 24 24" width="26" height="26" fill="white">
+                            <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 17px;">Book Free Estimate</h4>
+                        <p class="cta-subtext">Pick a time that works for you</p>
+                    </div>
+                </a>
             </div>
 
-            <!-- Trust Bar -->
-            <div class="hero-trust">
-                <div class="trust-item">
-                    <span class="trust-number">500+</span>
-                    <span class="trust-label">Projects Completed</span>
+            <!-- Trust checkpoints -->
+            <div class="hero-checks">
+                <span class="hero-check"><span class="hero-check-icon">✓</span> Free Estimate</span>
+                <span class="hero-check"><span class="hero-check-icon">✓</span> No Obligation</span>
+                <span class="hero-check"><span class="hero-check-icon">✓</span> Best Value</span>
+                <span class="hero-check"><span class="hero-check-icon">✓</span> Premium Quality</span>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Google Reviews -->
+    <section style="background: var(--light-gray);">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Google Reviews</div>
+                <h2 class="section-title">What Our Clients Say</h2>
+                <p class="section-description">Real feedback from real Chicago homeowners — 5.0 stars across 17 reviews</p>
+            </div>
+
+            <div class="reviews-carousel-wrapper">
+                <button class="carousel-btn carousel-btn-prev" id="reviewPrev" aria-label="Previous">&#8592;</button>
+                <button class="carousel-btn carousel-btn-next" id="reviewNext" aria-label="Next">&#8594;</button>
+
+            <div class="reviews-carousel" id="reviewsCarousel">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"From the moment of our appointment, Byron quickly put our minds at ease with his extensive knowledge. The attention to detail in both showers is truly outstanding — from the precise tile work to the flawless finishes. We highly recommend Make a Dream Home to anyone looking for exceptional quality and professionalism."</p>
+                    <div class="review-author">
+                        <div class="review-avatar">BK</div>
+                        <div class="review-author-info">
+                            <h4>Benny Blanxs &amp; Kim C.</h4>
+                            <p>Google Review</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="trust-item">
-                    <span class="trust-number">25+</span>
-                    <span class="trust-label">Years Experience</span>
+
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"After a leak from the condo above caused serious water damage in my bathroom, I called Make a Dream Home. Byron was honest, thorough, and easy to work with. He walked me through every step and made sure the repair was done right. The finished bathroom looks even better than before the damage."</p>
+                    <div class="review-author">
+                        <div class="review-avatar">SR</div>
+                        <div class="review-author-info">
+                            <h4>Scott Radliff</h4>
+                            <p>Local Guide · Google Review</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="trust-item">
-                    <span class="trust-number">4.9★</span>
-                    <span class="trust-label">Average Rating</span>
+
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"I'm very satisfied with Make a Dream Home. Starting with a full basement remodel, then a full kitchen renovation and whole-home painting. I'm getting lots of compliments from neighbors and co-workers. The quality of workmanship is truly outstanding."</p>
+                    <div class="review-author">
+                        <div class="review-avatar">LC</div>
+                        <div class="review-author-info">
+                            <h4>Lilian Coleman</h4>
+                            <p>Google Review</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="trust-item">
-                    <span class="trust-number">100%</span>
-                    <span class="trust-label">Satisfaction Rate</span>
+
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Make a Dream Home is professional, reliable, and dedicated to quality. What impressed us most was that they turned our vision into a reality and exceeded our expectations. Their attention to detail was outstanding. Highly recommended."</p>
+                    <div class="review-author">
+                        <div class="review-avatar">CE</div>
+                        <div class="review-author-info">
+                            <h4>Christiana Ebunyebe</h4>
+                            <p>Google Review</p>
+                        </div>
+                    </div>
                 </div>
+
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Make a Dream Home is a reliable company with honest workers who are very skilled and passionate about what they do. Prices are reasonable and the results are incredible! They pay great attention to detail."</p>
+                    <div class="review-author">
+                        <div class="review-avatar">DA</div>
+                        <div class="review-author-info">
+                            <h4>Dennis Arreaza</h4>
+                            <p>Google Review</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"They did a great job. Were very professional. They answered all our questions as they came up. Even helped us make decisions with their knowledge of what we were doing."</p>
+                    <div class="review-author">
+                        <div class="review-avatar">MH</div>
+                        <div class="review-author-info">
+                            <h4>Michael Hornung</h4>
+                            <p>Google Review</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="swipe-hint" style="text-align: center; margin-top: 8px; color: var(--text-secondary); font-size: 13px; margin-bottom: 32px;">← Swipe to see more →</div>
+
+            <div style="text-align: center;">
+                <a href="https://maps.app.goo.gl/ZxmW5HCDiocXMszp9" target="_blank" class="btn btn-large">Read All 17 Reviews on Google</a>
             </div>
         </div>
     </section>
@@ -1369,7 +1656,7 @@
             </div>
 
             <div style="text-align: center;">
-                <a href="https://calendly.com/makeadreamhome/30min" target="_blank" class="btn btn-large">Start Your Project Today</a>
+                <a href="https://calendly.com/makeadreamhome/book-now" target="_blank" class="btn btn-large">Start Your Project Today</a>
             </div>
         </div>
     </section>
@@ -1441,61 +1728,6 @@
                     <div class="service-content">
                         <h3>Professional Plumbing</h3>
                         <p>Complete plumbing installations and repairs. All work meets Chicago building codes.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reviews -->
-    <section style="background: var(--light-gray);">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-badge">Testimonials</div>
-                <h2 class="section-title">What Our Clients Say</h2>
-                <p class="section-description">Real feedback from real homeowners across Chicago</p>
-            </div>
-
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">
-                        "Best value in Chicago, hands down. They completely transformed our master bathroom in just 6 days. The quality is outstanding and the price was fair. Highly recommend!"
-                    </p>
-                    <div class="review-author">
-                        <div class="review-avatar">MJ</div>
-                        <div class="review-author-info">
-                            <h4>Michael Johnson</h4>
-                            <p>Oak Park, IL</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">
-                        "Professional, punctual, and perfect results. Our walk-in shower is beautiful. The XL tiles are gorgeous and the work is flawless. Worth every penny."
-                    </p>
-                    <div class="review-author">
-                        <div class="review-avatar">SR</div>
-                        <div class="review-author-info">
-                            <h4>Susan Rodriguez</h4>
-                            <p>Naperville, IL</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">
-                        "After getting 5 quotes, Make a Dream Home had the best combination of quality and price. They delivered exactly what they promised. Our bathroom looks amazing!"
-                    </p>
-                    <div class="review-author">
-                        <div class="review-avatar">DW</div>
-                        <div class="review-author-info">
-                            <h4>David Williams</h4>
-                            <p>Elmhurst, IL</p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1626,7 +1858,7 @@
                         <a href="tel:+13125551234" class="btn btn-large btn-white">
                             Call Now: (312) 555-1234
                         </a>
-                        <a href="https://calendly.com/makeadreamhome/30min" target="_blank" class="btn btn-large btn-secondary">
+                        <a href="https://calendly.com/makeadreamhome/book-now" target="_blank" class="btn btn-large btn-secondary">
                             Book Free Visit
                         </a>
                     </div>
@@ -1642,6 +1874,7 @@
             <div class="modal-header">
                 <h2>Walk-In Showers</h2>
                 <p>Modern, accessible walk-in showers designed for comfort, safety, and style. Perfect for aging-in-place or contemporary bathroom aesthetics.</p>
+                <div class="modal-price">Starting at $12,000</div>
             </div>
             <div class="modal-gallery">
                 <div class="modal-gallery-item"><img src="https://i.imgur.com/KQzfsI1.jpeg" alt="Walk-in Shower 1"></div>
@@ -1651,7 +1884,7 @@
             </div>
             <div class="modal-cta">
                 <h3>Ready for Your Walk-In Shower?</h3>
-                <a href="https://calendly.com/makeadreamhome/30min" target="_blank" class="btn btn-large btn-white">Book Free Visit</a>
+                <a href="https://calendly.com/makeadreamhome/book-now" target="_blank" class="btn btn-large btn-white">Book Free Visit</a>
             </div>
         </div>
     </div>
@@ -1662,6 +1895,7 @@
             <div class="modal-header">
                 <h2>Tub-to-Shower Conversions</h2>
                 <p>Transform your old bathtub into a spacious, modern walk-in shower. Quick installation in 5-6 days.</p>
+                <div class="modal-price">Starting at $8,000</div>
             </div>
             <div class="modal-gallery">
                 <div class="modal-gallery-item"><img src="https://i.imgur.com/f0FRlRS.jpeg" alt="Tub Conversion 1"></div>
@@ -1670,7 +1904,7 @@
             </div>
             <div class="modal-cta">
                 <h3>Ready to Convert Your Tub?</h3>
-                <a href="https://calendly.com/makeadreamhome/30min" target="_blank" class="btn btn-large btn-white">Book Free Visit</a>
+                <a href="https://calendly.com/makeadreamhome/book-now" target="_blank" class="btn btn-large btn-white">Book Free Visit</a>
             </div>
         </div>
     </div>
@@ -1681,6 +1915,7 @@
             <div class="modal-header">
                 <h2>Full Bathroom Remodels</h2>
                 <p>Complete bathroom transformations including custom tile work, fixtures, cabinetry, and plumbing. Designed to match your vision.</p>
+                <div class="modal-price">Starting at $15,000</div>
             </div>
             <div class="modal-gallery">
                 <div class="modal-gallery-item"><img src="https://i.imgur.com/8TIDtJR.jpeg" alt="Full Remodel 1"></div>
@@ -1689,7 +1924,7 @@
             </div>
             <div class="modal-cta">
                 <h3>Ready for Your Dream Bathroom?</h3>
-                <a href="https://calendly.com/makeadreamhome/30min" target="_blank" class="btn btn-large btn-white">Book Free Visit</a>
+                <a href="https://calendly.com/makeadreamhome/book-now" target="_blank" class="btn btn-large btn-white">Book Free Visit</a>
             </div>
         </div>
     </div>
@@ -1700,13 +1935,14 @@
             <div class="modal-header">
                 <h2>Luxury Bathroom Upgrades</h2>
                 <p>Premium finishes, custom cabinets, heated floors, freestanding tubs, and high-end fixtures that elevate your bathroom to spa-like luxury.</p>
+                <div class="modal-price">Starting at $20,000</div>
             </div>
             <div class="modal-gallery">
                 <div class="modal-gallery-item"><img src="https://i.imgur.com/S18i2vO.jpeg" alt="Luxury Upgrade 1"></div>
             </div>
             <div class="modal-cta">
                 <h3>Ready for Luxury?</h3>
-                <a href="https://calendly.com/makeadreamhome/30min" target="_blank" class="btn btn-large btn-white">Book Free Visit</a>
+                <a href="https://calendly.com/makeadreamhome/book-now" target="_blank" class="btn btn-large btn-white">Book Free Visit</a>
             </div>
         </div>
     </div>
@@ -1717,13 +1953,14 @@
             <div class="modal-header">
                 <h2>Custom Tile Work</h2>
                 <p>Expert installation of XL porcelain, ceramic, and natural stone tiles. Modern, seamless designs that make a bold statement.</p>
+                <div class="modal-price">Starting at $5,000</div>
             </div>
             <div class="modal-gallery">
                 <div class="modal-gallery-item"><img src="https://i.imgur.com/UcL7hyr.jpeg" alt="Custom Tile 1"></div>
             </div>
             <div class="modal-cta">
                 <h3>Ready for Custom Tile?</h3>
-                <a href="https://calendly.com/makeadreamhome/30min" target="_blank" class="btn btn-large btn-white">Book Free Visit</a>
+                <a href="https://calendly.com/makeadreamhome/book-now" target="_blank" class="btn btn-large btn-white">Book Free Visit</a>
             </div>
         </div>
     </div>
@@ -1734,13 +1971,14 @@
             <div class="modal-header">
                 <h2>Professional Plumbing</h2>
                 <p>Complete plumbing installations and repairs for your bathroom remodel. All work meets Chicago building codes with quality guarantees.</p>
+                <div class="modal-price">Starting at $500</div>
             </div>
             <div class="modal-gallery">
                 <div class="modal-gallery-item"><img src="https://i.imgur.com/cihzZKZ.jpeg" alt="Plumbing Work 1"></div>
             </div>
             <div class="modal-cta">
                 <h3>Need Plumbing Services?</h3>
-                <a href="https://calendly.com/makeadreamhome/30min" target="_blank" class="btn btn-large btn-white">Book Free Visit</a>
+                <a href="https://calendly.com/makeadreamhome/book-now" target="_blank" class="btn btn-large btn-white">Book Free Visit</a>
             </div>
         </div>
     </div>
@@ -1759,7 +1997,7 @@
             <div class="footer-links">
                 <a href="tel:+13125551234">Call Us</a>
                 <a href="sms:+13125551234">Text Us</a>
-                <a href="https://calendly.com/makeadreamhome/30min" target="_blank">Book Visit</a>
+                <a href="https://calendly.com/makeadreamhome/book-now" target="_blank">Book Visit</a>
             </div>
 
             <div class="social-links">
@@ -1794,6 +2032,72 @@
                 // gtag('event', 'contact_click', { method: this.href.split(':')[0] });
             });
         });
+
+        // Reviews Carousel — infinite loop
+        (function() {
+            const carousel = document.getElementById('reviewsCarousel');
+            const prevBtn = document.getElementById('reviewPrev');
+            const nextBtn = document.getElementById('reviewNext');
+            if (!carousel || !prevBtn || !nextBtn) return;
+
+            // Clone all original cards and append for seamless loop
+            const origCards = Array.from(carousel.querySelectorAll('.review-card'));
+            origCards.forEach(card => {
+                const clone = card.cloneNode(true);
+                clone.setAttribute('aria-hidden', 'true');
+                carousel.appendChild(clone);
+            });
+
+            function getCardWidth() {
+                const card = carousel.querySelector('.review-card');
+                return card ? card.offsetWidth + 20 : 340;
+            }
+
+            // Start at position 0 (real cards)
+            const origWidth = () => getCardWidth() * origCards.length;
+
+            function advance(dir) {
+                carousel.scrollBy({ left: dir * getCardWidth(), behavior: 'smooth' });
+            }
+
+            // After smooth scroll settles, silently jump if in clone zone
+            carousel.addEventListener('scrollend', () => {
+                const ow = origWidth();
+                if (carousel.scrollLeft >= ow) {
+                    carousel.scrollLeft -= ow;
+                } else if (carousel.scrollLeft <= 0 && carousel.scrollLeft < 0) {
+                    carousel.scrollLeft += ow;
+                }
+            });
+
+            // Fallback for browsers without scrollend
+            let scrollEndTimer;
+            carousel.addEventListener('scroll', () => {
+                clearTimeout(scrollEndTimer);
+                scrollEndTimer = setTimeout(() => {
+                    const ow = origWidth();
+                    if (carousel.scrollLeft >= ow) {
+                        carousel.scrollLeft -= ow;
+                    }
+                    if (carousel.scrollLeft < 0) {
+                        carousel.scrollLeft += ow;
+                    }
+                }, 120);
+            });
+
+            prevBtn.addEventListener('click', () => { advance(-1); resetAuto(); });
+            nextBtn.addEventListener('click', () => { advance(1); resetAuto(); });
+
+            let autoTimer = setInterval(() => advance(1), 3500);
+
+            function resetAuto() {
+                clearInterval(autoTimer);
+                autoTimer = setInterval(() => advance(1), 3500);
+            }
+
+            carousel.addEventListener('mouseenter', () => clearInterval(autoTimer));
+            carousel.addEventListener('mouseleave', resetAuto);
+        })();
 
         // Calendly tracking
         document.querySelectorAll('a[href*="calendly"]').forEach(link => {
